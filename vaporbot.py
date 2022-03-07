@@ -26,6 +26,11 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
+    
+    if message.content == "W":
+        if message.author.bot:
+            return
+        await message.channel.send("W")
 
     for word in wordlist:
         if word in message.content:
